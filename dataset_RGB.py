@@ -35,8 +35,8 @@ class DataLoaderTrain(Dataset):
         inp_path = self.inp_filenames[index_]
         tar_path = self.tar_filenames[index_]
 
-        inp_img = Image.open(inp_path)
-        tar_img = Image.open(tar_path)
+        inp_img = Image.open(inp_path).convert('RGB')
+        tar_img = Image.open(tar_path).convert('RGB')
 
         w,h = tar_img.size
         padw = ps-w if w<ps else 0
@@ -123,8 +123,8 @@ class DataLoaderVal(Dataset):
         inp_path = self.inp_filenames[index_]
         tar_path = self.tar_filenames[index_]
 
-        inp_img = Image.open(inp_path)
-        tar_img = Image.open(tar_path)
+        inp_img = Image.open(inp_path).convert('RGB')
+        tar_img = Image.open(tar_path).convert('RGB')
 
         # Validate on center crop
         if self.ps is not None:
@@ -155,7 +155,7 @@ class DataLoaderTest(Dataset):
 
         path_inp = self.inp_filenames[index]
         filename = os.path.splitext(os.path.split(path_inp)[-1])[0]
-        inp = Image.open(path_inp)
+        inp = Image.open(path_inp).convert('RGB')
 
         inp = TF.to_tensor(inp)
         return inp, filename
