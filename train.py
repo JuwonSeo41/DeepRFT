@@ -41,7 +41,7 @@ parser.add_argument('--pretrain_weights', default='./checkpoints/model_best.pth'
 parser.add_argument('--mode', default='Deblurring', type=str)
 parser.add_argument('--session', default='DeepRFT_gopro', type=str, help='session')
 parser.add_argument('--patch_size', default=128, type=int, help='patch size, for paper: [GoPro, HIDE, RealBlur]=256, [DPDD]=512')
-parser.add_argument('--num_epochs', default=3000, type=int, help='num_epochs')
+parser.add_argument('--num_epochs', default=300, type=int, help='num_epochs')
 parser.add_argument('--batch_size', default=16, type=int, help='batch_size')
 parser.add_argument('--val_epochs', default=20, type=int, help='val_epochs')
 args = parser.parse_args()
