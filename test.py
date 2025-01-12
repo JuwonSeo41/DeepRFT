@@ -15,14 +15,14 @@ import cv2
 
 
 parser = argparse.ArgumentParser(description='Image Deblurring')
-parser.add_argument('--input_dir', default='./Datasets/GoPro/test/blur', type=str, help='Directory of validation images')
-parser.add_argument('--target_dir', default='./Datasets/GoPro/test/sharp', type=str, help='Directory of validation images')
-parser.add_argument('--output_dir', default='./results/DeepRFT/GoPro', type=str, help='Directory of validation images')
+parser.add_argument('--input_dir', default='/content/PV_dataset/1st/Test/input', type=str, help='Directory of validation images')
+parser.add_argument('--target_dir', default='/content/PV_dataset/1st/Test/target', type=str, help='Directory of validation images')
+parser.add_argument('--output_dir', default='/content/drive/MyDrive/Colab Notebooks/DeepRFT/result', type=str, help='Directory of validation images')
 parser.add_argument('--weights', default='./checkpoints/DeepRFT/model_GoPro.pth', type=str, help='Path to weights')
 parser.add_argument('--get_psnr', default=False, type=bool, help='PSNR')
 parser.add_argument('--gpus', default='0', type=str, help='CUDA_VISIBLE_DEVICES')
-parser.add_argument('--save_result', default=False, type=bool, help='save result')
-parser.add_argument('--win_size', default=256, type=int, help='window size, [GoPro, HIDE, RealBlur]=256, [DPDD]=512')
+parser.add_argument('--save_result', default=True, type=bool, help='save result')
+parser.add_argument('--win_size', default=128, type=int, help='window size, [GoPro, HIDE, RealBlur]=256, [DPDD]=512')
 parser.add_argument('--num_res', default=8, type=int, help='num of resblocks, [Small, Med, PLus]=[4, 8, 20]')
 args = parser.parse_args()
 result_dir = args.output_dir
