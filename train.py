@@ -36,7 +36,7 @@ parser = argparse.ArgumentParser(description='Image Deblurring')
 
 parser.add_argument('--train_dir', default='/content/PV_dataset/1st/Train', type=str, help='Directory of train images')
 parser.add_argument('--val_dir', default='/content/PV_dataset/1st/Val', type=str, help='Directory of validation images')
-parser.add_argument('--model_save_dir', default='./checkpoints', type=str, help='Path to save weights')
+parser.add_argument('--model_save_dir', default='/content/drive/MyDrive/Colab Notebooks/DeepRFT/weights', type=str, help='Path to save weights')
 parser.add_argument('--pretrain_weights', default='./checkpoints/model_best.pth', type=str, help='Path to pretrain-weights')
 parser.add_argument('--mode', default='Deblurring', type=str)
 parser.add_argument('--session', default='DeepRFT_gopro', type=str, help='session')
@@ -50,7 +50,7 @@ mode = args.mode
 session = args.session
 patch_size = args.patch_size
 
-model_dir = os.path.join(args.model_save_dir, mode, 'models',  session)
+model_dir = os.path.join(args.model_save_dir)
 utils.mkdir(model_dir)
 
 train_dir = args.train_dir
