@@ -15,7 +15,8 @@ import numpy as np
 
 import utils
 from data_RGB import get_training_data, get_validation_data
-from DeepRFT_MIMO import DeepRFT as myNet
+# from DeepRFT_MIMO import DeepRFT as myNet
+from DeepRFT_MIMO import DeepRFTPLUS as myNet
 import losses
 from warmup_scheduler import GradualWarmupScheduler
 from tqdm import tqdm
