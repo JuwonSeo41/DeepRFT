@@ -6,7 +6,7 @@ from torch.utils.data import DataLoader
 import utils
 from data_RGB import get_test_data
 # from DeepRFT_MIMO import DeepRFT as mynet
-from DeepRFT_MIMO import DeepRFTPLUS as myNet
+from DeepRFT_MIMO import DeepRFTPLUS as mynet
 from skimage import img_as_ubyte
 from get_parameter_number import get_parameter_number
 from tqdm import tqdm
