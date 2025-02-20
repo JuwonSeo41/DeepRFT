@@ -5,7 +5,8 @@ import torch
 from torch.utils.data import DataLoader
 import utils
 from data_RGB import get_test_data
-from DeepRFT_MIMO import DeepRFT as mynet
+# from DeepRFT_MIMO import DeepRFT as mynet
+from DeepRFT_MIMO import DeepRFTPLUS as myNet
 from skimage import img_as_ubyte
 from get_parameter_number import get_parameter_number
 from tqdm import tqdm
@@ -18,7 +19,7 @@ parser = argparse.ArgumentParser(description='Image Deblurring')
 parser.add_argument('--input_dir', default='/content/PV_dataset/1st/Test/input', type=str, help='Directory of validation images')
 parser.add_argument('--target_dir', default='/content/PV_dataset/1st/Test/target', type=str, help='Directory of validation images')
 parser.add_argument('--output_dir', default='/content/drive/MyDrive/Colab Notebooks/DeepRFT/result', type=str, help='Directory of validation images')
-parser.add_argument('--weights', default='./checkpoints/DeepRFT/model_GoPro.pth', type=str, help='Path to weights')
+parser.add_argument('--weights', default='/content/drive/MyDrive/Colab Notebooks/DeepRFT/weights/model_best.pth', type=str, help='Path to weights')
 parser.add_argument('--get_psnr', default=True, type=bool, help='PSNR')
 parser.add_argument('--gpus', default='0', type=str, help='CUDA_VISIBLE_DEVICES')
 parser.add_argument('--save_result', default=True, type=bool, help='save result')
