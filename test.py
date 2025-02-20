@@ -72,11 +72,11 @@ with torch.no_grad():
             restored_img = restored[batch]
             restored_img = img_as_ubyte(restored[batch])
             if get_psnr:
-                rgb_gt = cv2.imread(os.path.join(args.target_dir, filenames[batch]+'.png'))
+                rgb_gt = cv2.imread(os.path.join(args.target_dir, filenames[batch]+'.jpg'))
                 rgb_gt = cv2.cvtColor(rgb_gt, cv2.COLOR_BGR2RGB)
                 psnr_val_rgb.append(psnr_loss(restored_img, rgb_gt))
             if args.save_result:
-                utils.save_img((os.path.join(result_dir, filenames[batch]+'.png')), restored_img)
+                utils.save_img((os.path.join(result_dir, filenames[batch]+'.jpg')), restored_img)
 
 if get_psnr:
     psnr = sum(psnr_val_rgb) / len(test_dataset)
