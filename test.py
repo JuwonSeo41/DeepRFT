@@ -24,7 +24,7 @@ parser.add_argument('--get_psnr', default=True, type=bool, help='PSNR')
 parser.add_argument('--gpus', default='0', type=str, help='CUDA_VISIBLE_DEVICES')
 parser.add_argument('--save_result', default=True, type=bool, help='save result')
 parser.add_argument('--win_size', default=128, type=int, help='window size, [GoPro, HIDE, RealBlur]=256, [DPDD]=512')
-parser.add_argument('--num_res', default=8, type=int, help='num of resblocks, [Small, Med, PLus]=[4, 8, 20]')
+parser.add_argument('--num_res', default=20, type=int, help='num of resblocks, [Small, Med, PLus]=[4, 8, 20]')
 args = parser.parse_args()
 result_dir = args.output_dir
 win = args.win_size
