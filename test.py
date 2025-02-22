@@ -16,8 +16,8 @@ import cv2
 
 
 parser = argparse.ArgumentParser(description='Image Deblurring')
-parser.add_argument('--input_dir', default='/content/PV_dataset/1st/Test/input', type=str, help='Directory of validation images')
-parser.add_argument('--target_dir', default='/content/PV_dataset/1st/Test/target', type=str, help='Directory of validation images')
+parser.add_argument('--input_dir', default='/content/PV_dataset/2nd/Test/input', type=str, help='Directory of validation images')
+parser.add_argument('--target_dir', default='/content/PV_dataset/2nd/Test/target', type=str, help='Directory of validation images')
 parser.add_argument('--output_dir', default='/content/drive/MyDrive/Colab Notebooks/DeepRFTPLUS/result', type=str, help='Directory of validation images')
 parser.add_argument('--weights', default='/content/drive/MyDrive/Colab Notebooks/DeepRFTPLUS/weights/model_best.pth', type=str, help='Path to weights')
 parser.add_argument('--get_psnr', default=True, type=bool, help='PSNR')
