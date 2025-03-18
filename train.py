@@ -83,7 +83,7 @@ warmup_epochs = 3
 scheduler_cosine = optim.lr_scheduler.CosineAnnealingLR(optimizer, num_epochs-warmup_epochs, eta_min=end_lr)
 scheduler = GradualWarmupScheduler(optimizer, multiplier=1, total_epoch=warmup_epochs, after_scheduler=scheduler_cosine)
 
-RESUME = True
+RESUME = False
 Pretrain = False
 model_pre_dir = ''
 ######### Pretrain ###########
