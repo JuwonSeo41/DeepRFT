@@ -5,8 +5,8 @@ import torch
 from torch.utils.data import DataLoader
 import utils
 from data_RGB import get_test_data
-# from DeepRFT_MIMO import DeepRFT as mynet
-from DeepRFT_MIMO import DeepRFTPLUS as mynet
+from DeepRFT_MIMO import DeepRFT as mynet
+# from DeepRFT_MIMO import DeepRFTPLUS as mynet
 from skimage import img_as_ubyte
 from get_parameter_number import get_parameter_number
 from tqdm import tqdm
@@ -18,13 +18,13 @@ import cv2
 parser = argparse.ArgumentParser(description='Image Deblurring')
 parser.add_argument('--input_dir', default='/content/PV_dataset/2nd/Test/input', type=str, help='Directory of validation images')
 parser.add_argument('--target_dir', default='/content/PV_dataset/2nd/Test/target', type=str, help='Directory of validation images')
-parser.add_argument('--output_dir', default='/content/drive/MyDrive/Colab Notebooks/DeepRFTPLUS/result', type=str, help='Directory of validation images')
-parser.add_argument('--weights', default='/content/drive/MyDrive/Colab Notebooks/DeepRFTPLUS/weights/model_best.pth', type=str, help='Path to weights')
+parser.add_argument('--output_dir', default='/content/drive/MyDrive/Colab Notebooks/DeepRFT/result', type=str, help='Directory of validation images')
+parser.add_argument('--weights', default='/content/drive/MyDrive/Colab Notebooks/DeepRFT/weights/model_best.pth', type=str, help='Path to weights')
 parser.add_argument('--get_psnr', default=True, type=bool, help='PSNR')
 parser.add_argument('--gpus', default='0', type=str, help='CUDA_VISIBLE_DEVICES')
 parser.add_argument('--save_result', default=True, type=bool, help='save result')
 parser.add_argument('--win_size', default=128, type=int, help='window size, [GoPro, HIDE, RealBlur]=256, [DPDD]=512')
-parser.add_argument('--num_res', default=20, type=int, help='num of resblocks, [Small, Med, PLus]=[4, 8, 20]')    # 그냥은 8
+parser.add_argument('--num_res', default=8, type=int, help='num of resblocks, [Small, Med, PLus]=[4, 8, 20]')    # 그냥은 8
 args = parser.parse_args()
 result_dir = args.output_dir
 win = args.win_size
