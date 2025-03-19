@@ -35,8 +35,8 @@ start_epoch = 1
 
 parser = argparse.ArgumentParser(description='Image Deblurring')
 
-parser.add_argument('--train_dir', default='/content/PV_dataset/2nd/Train', type=str, help='Directory of train images')
-parser.add_argument('--val_dir', default='/content/PV_dataset/2nd/Val', type=str, help='Directory of validation images')
+parser.add_argument('--train_dir', default='/content/PV_dataset/1st/Train', type=str, help='Directory of train images')
+parser.add_argument('--val_dir', default='/content/PV_dataset/1st/Val', type=str, help='Directory of validation images')
 parser.add_argument('--model_save_dir', default='/content/drive/MyDrive/Colab Notebooks/DeepRFT/weights', type=str, help='Path to save weights')
 parser.add_argument('--pretrain_weights', default='./checkpoints/model_best.pth', type=str, help='Path to pretrain-weights')
 parser.add_argument('--mode', default='Deblurring', type=str)
